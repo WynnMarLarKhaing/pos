@@ -1,0 +1,8 @@
+* {
+    font-size: 100%;
+    font-family: Cursive;
+}
+
+.container{
+    padding-bottom: 10px;/*←footerの高さ*/
+}

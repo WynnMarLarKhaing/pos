@@ -13,6 +13,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/customers">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/stocks">Stocks</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
