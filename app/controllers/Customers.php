@@ -18,7 +18,7 @@ class Customers extends Controller
         $data = [
             'customers' => $customers
         ];
-
+        printPdf1();
         $this->view('customers/index', $data);
     }
 
