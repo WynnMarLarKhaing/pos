@@ -8,33 +8,33 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>">Home</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/customers">အထမ်းများ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/stocks">ပစ္စည်းစာရင်းများ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>/customers">Customers</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/receipts">အရောင်းစာရင်းများ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>/stocks">Stocks</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/receipts/add">ဘောင်ချာအသစ်ထည့်မယ်</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['user_id'])) : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href=""> Welcome <?php echo $_SESSION['user_name']; ?></a>
+                        <a class="nav-link" href=""> ကြိုဆိုပါတယ် <?php echo $_SESSION['user_name']; ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
+                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">ထွက်မည်</a>
                     </li>
                 <?php else : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Register</a>
+                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">မှတ်ပုံတင်မည်</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
+                        <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">ဝင်မည်</a>
                     </li>
                 <?php endif; ?>
             </ul>

@@ -34,9 +34,8 @@ CREATE TABLE `customers` (
   `phone` text NOT NULL,
   `address` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 --
 -- Dumping data for table `customers`
 --
@@ -55,10 +54,11 @@ INSERT INTO `customers` (`id`, `name`, `phone`, `address`, `created_at`, `update
 CREATE TABLE `stocks` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stocks_shortcut_id` int(11) NOT NULL,
   `customer_price` int(11) NOT NULL,
   `non_customer_price` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -73,7 +73,24 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `receipts` (
+  `receipt_id` int(11) NOT NULL,
+  `stock_id` int(11) NOT NULL,
+  `customer_id` int(11) NULL,
+  `qty` DECIMAL (18, 2) NOT NULL,
+  `order_type` int(2) NULL,
+  `save_type` int(2) NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -130,3 +147,9 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+ALTER TABLE `stocks` ADD `name_zawgyi` VARCHAR(255) NULL AFTER `name`;
+
+
+ALTER TABLE `customers` ADD `name_zawgyi` VARCHAR(255) NULL AFTER `name`;

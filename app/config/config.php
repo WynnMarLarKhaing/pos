@@ -10,10 +10,10 @@ define('DB_NAME', 'pos');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //Url Root
-define('URLROOT', 'http://localhost/pos');
+define('URLROOT', 'http://192.168.64.2/pos');
 
 //Site Name
-define('SITENAME', 'SharePosts');
+define('SITENAME', 'အန်တီလေး');
 
 //Application version
 define('APPVERSION', '1.0.0');

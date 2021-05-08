@@ -23,9 +23,10 @@ class Customer
 
     public function addPost($data)
     {
-        $this->db->query("INSERT INTO customers (name,phone,address) VALUES (:name, :phone, :address)");
+        $this->db->query("INSERT INTO customers (name,name_zawgyi,phone,address) VALUES (:name, :name_zawgyi, :phone, :address)");
         //Bind Values
         $this->db->bind(':name', $data['name']);
+        $this->db->bind(':name_zawgyi', $data['name_zawgyi']);
         $this->db->bind(':phone', $data['phone']);
         $this->db->bind(':address', $data['address']);
 
@@ -39,10 +40,11 @@ class Customer
 
     public function updatePost($data)
     {
-        $this->db->query("UPDATE customers SET name = :name , phone = :phone, address = :address WHERE id = :id");
+        $this->db->query("UPDATE customers SET name = :name , name_zawgyi = :name_zawgyi ,phone = :phone, address = :address WHERE id = :id");
         //Bind Values
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':name', $data['name']);
+        $this->db->bind(':name_zawgyi', $data['name_zawgyi']);
         $this->db->bind(':phone', $data['phone']);
         $this->db->bind(':address', $data['address']);
 
