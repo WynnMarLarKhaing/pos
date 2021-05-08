@@ -18,7 +18,6 @@ class Customers extends Controller
         $data = [
             'customers' => $customers
         ];
-        printPdf1();
         $this->view('customers/index', $data);
     }
 
@@ -31,6 +30,7 @@ class Customers extends Controller
 
             $data = [
                 'name' => trim($_POST['name']),
+                'name_zawgyi' => trim($_POST['name_zawgyi']),
                 'phone'  => trim($_POST['phone']),
                 'name_err' => '',
                 'phone_err'  => '',
@@ -63,6 +63,7 @@ class Customers extends Controller
 
             $data = [
                 'name' => '',
+                'name_zawgyi' => '',
                 'phone'  => '',
                 'address'  => '',
             ];
@@ -81,6 +82,7 @@ class Customers extends Controller
             $data = [
                 'id'        => $id,
                 'name'     => trim($_POST['name']),
+                'name_zawgyi'     => trim($_POST['name_zawgyi']),
                 'phone'      => trim($_POST['phone']),
                 'name_err' => '',
                 'phone_err'  => '',
@@ -121,6 +123,7 @@ class Customers extends Controller
             $data = [
                 'id'    => $id,
                 'name' => trim($post->name),
+                'name_zawgyi' => trim($post->name_zawgyi),
                 'phone'  => trim($post->phone),
                 'address'  => trim($post->address),
             ];
@@ -151,5 +154,10 @@ class Customers extends Controller
         } else {
             redirect('customers');
         }
+    }
+
+    public function download($id)
+    {
+        printPdf1();
     }
 }

@@ -1,13 +1,15 @@
 <?php require_once APPROOT . "/views/inc/header.php" ?>
-<a href="<?php echo URLROOT; ?>/customers" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+<a href="<?php echo URLROOT; ?>/customers" class="btn btn-light"><i class="fa fa-backward"></i> ရှေ့စာမျက်နှာသို့</a>
 <div class="card-body bg-light mt-3">
-    <h2>Edit Post</h2>
-    <p>Edit a customer with this form</p>
     <form action="<?php echo URLROOT; ?>/customers/edit/<?php echo $data['id']; ?>" method="post">
         <div class="form-group">
             <label for="name">name:<sup>*</sup></label>
             <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['name']; ?>">
             <span class="invalid-feedback"><?php echo (!empty($data['name_err'])) ? $data['name_err'] : ''; ?></span>
+        </div>
+        <div class="form-group">
+            <label for="name">ပစ္စည်းအမည်(ဇော်ဂျီ)<sup>*</sup></label>
+            <input type="text" name="name_zawgyi" class="form-control form-control-lg" value="<?php echo $data['name_zawgyi']; ?>">
         </div>
         <div class="form-group">
             <label for="phone">phone:<sup>*</sup></label>

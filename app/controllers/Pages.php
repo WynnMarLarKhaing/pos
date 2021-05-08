@@ -12,8 +12,8 @@ class Pages extends Controller
         }
 
         $data =  [
-            'title' => 'Share Posts',
-            'description' => 'This is simple social network.',
+            'title' => 'မင်္ဂလာပါ',
+            'description' => 'အန်တီလေးဆိုင်မှကြိုဆိုပါတယ်...',
         ];
         $this->view('pages/index', $data);
     }
