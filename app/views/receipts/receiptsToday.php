@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <table id="foo-table" class="table table-responsive table-striped table-bordered">
+        <table id="receipts" class="table table-responsive table-striped table-bordered">
             <thead>
                 <tr>
                     <th width="10%">အမှတ်စဉ်</th>
@@ -68,7 +68,14 @@ $(document).ready(function (){
 	// 	language: { url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json" }
 	// });
 
-	$("#foo-table").DataTable();
-	$("#receipts").DataTable();
+	$("#receipts").DataTable({
+        "bStateSave": true,
+        "fnStateSave": function (oSettings, oData) {
+            localStorage.setItem('offersDataTables', JSON.stringify(oData));
+        },
+        "fnStateLoad": function (oSettings) {
+            return JSON.parse(localStorage.getItem('offersDataTables'));
+        }
+    });
 });
 </script>

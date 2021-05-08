@@ -49,7 +49,14 @@ $(document).ready(function (){
 	// 	language: { url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json" }
 	// });
 
-	$("#foo-table").DataTable();
-	$("#stocks").DataTable();
+	$("#stocks").DataTable({
+        "bStateSave": true,
+        "fnStateSave": function (oSettings, oData) {
+            localStorage.setItem('offersDataTables', JSON.stringify(oData));
+        },
+        "fnStateLoad": function (oSettings) {
+            return JSON.parse(localStorage.getItem('offersDataTables'));
+        }
+    });
 });
 </script>
