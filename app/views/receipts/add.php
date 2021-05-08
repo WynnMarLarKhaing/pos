@@ -1,5 +1,9 @@
 <?php require_once APPROOT . "/views/inc/header.php" ?>
+<<<<<<< HEAD
 <a href="<?php echo URLROOT; ?>/receipts" class="btn btn-light"><i class="fa fa-backward"></i> ရှေ့စာမျက်နှာသို့</a>
+=======
+<a href="<?php echo URLROOT; ?>/receipts/receiptsToday" class="btn btn-light"><i class="fa fa-backward"></i> ရှေ့စာမျက်နှာသို့</a>
+>>>>>>> 8b8454f9586b540e6939013394b3b85c8f97f5ea
 <div class="card-body bg-light mt-3">
     <h4>ပစ္စည်းနံပါတ်များ</h4>
     </br>
